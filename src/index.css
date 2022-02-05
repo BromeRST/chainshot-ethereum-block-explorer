@@ -15,6 +15,7 @@ nav {
 input {
   width: 40%;
   height: 30px;
+  padding: 5px;
   font-family: "Press Start 2P", cursive;
   border-radius: 5px;
   border: hidden;
@@ -24,6 +25,16 @@ input {
 input::placeholder {
   text-align: center;
   font-size: 18px;
+}
+
+select {
+  height: 30px;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 5px;
+  border: hidden;
+  text-align: center;
+  margin-left: 40px;
+  padding: 5px;
 }
 
 .block--container {
@@ -59,6 +70,7 @@ input::placeholder {
   font-size: 14px;
   text-align: center;
   border: 5px solid black;
+  border-radius: 5px;
   padding: 30px 20px;
 }
 

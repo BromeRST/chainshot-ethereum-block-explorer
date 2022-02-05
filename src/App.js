@@ -2,7 +2,6 @@ import BlockObserve from './components/BlockObserve';
 import Blocks from './components/Blocks';
 import Txns from './components/Txns';
 import Navbar from './components/Navbar';
-import { arrayify } from 'ethers/lib/utils';
 
 const ethers = require('ethers');
 const { useEffect, useState } = require('react');
@@ -16,8 +15,8 @@ export default function App() {
   const [myBlockN, setMyBlockN] = useState(0)
   const [address, setAddress] = useState()
   const [balance, setBalance] = useState("loading")
+  const [url, setUrl] = useState("https://eth-rinkeby.alchemyapi.io/v2/VroPR9Iigwfn-aPM6sqvAS2XeEAJVrNN")
 
-  const url = "https://eth-rinkeby.alchemyapi.io/v2/VroPR9Iigwfn-aPM6sqvAS2XeEAJVrNN"
   const provider = new ethers.providers.JsonRpcProvider(url);
 
   const main = async () => {       
@@ -54,8 +53,6 @@ export default function App() {
   useEffect(()=> {
     getAddressValue()
   },[address])
-
-
   
   return (
     <div>
@@ -69,7 +66,10 @@ export default function App() {
         myTransaction === false ?
         <div>
           <Navbar
-            setAddress={setAddress} 
+            setAddress={setAddress}
+            url={url}
+            setUrl={setUrl}
+            setBlock={setBlock}
           />
           <Blocks 
             block={block}
